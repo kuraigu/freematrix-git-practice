@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 370" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .subtext { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #64748b; }
+      .pill { font-family: 'SF Mono', Consolas, Monaco, monospace; font-size: 11px; font-weight: 600; fill: #ffffff; }
+      .badge-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+      .arrow { stroke-width: 2.5; stroke-linecap: round; fill: none; }
+    </style>
+    <marker id="arrow-sky" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0284c7"/>
+    </marker>
+    <marker id="arrow-indigo" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4f46e5"/>
+    </marker>
+    <marker id="arrow-emerald" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#059669"/>
+    </marker>
+    <filter id="shadow" x="-3%" y="-4%" width="106%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.05"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="840" height="370" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Box: GitHub Remote -->
+  <g transform="translate(240, 24)">
+    <rect width="360" height="74" rx="10" fill="#ffffff" stroke="#10b981" stroke-width="1.8" filter="url(#shadow)"/>
+    <rect width="360" height="28" rx="10" fill="#ecfdf5"/>
+    <text x="16" y="19" class="badge-label" fill="#047857">GitHub Cloud Repository</text>
+    <text x="16" y="48" class="title" font-size="14">Remote Branch: origin/main</text>
+    <text x="16" y="63" class="subtext">Contains latest commits pushed by your teammates</text>
+  </g>
+
+  <!-- Left Path: git fetch -->
+  <!-- Arrow from GitHub to Local Cache -->
+  <path d="M 330 98 L 210 162" class="arrow" stroke="#0284c7" marker-end="url(#arrow-sky)"/>
+  <rect x="180" y="105" width="80" height="22" rx="11" fill="#0284c7"/>
+  <text x="190" y="120" class="pill">git fetch</text>
+
+  <!-- Middle Box: Local Remote-Tracking Cache -->
+  <g transform="translate(60, 168)">
+    <rect width="300" height="88" rx="10" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="14" y="12" width="24" height="24" rx="6" fill="#e0f2fe"/>
+    <text x="19" y="29" font-size="13">🔭</text>
+    <text x="46" y="28" class="title" fill="#0369a1" font-size="13">Local Tracking Cache (origin/main)</text>
+    <text x="14" y="52" class="subtext">Downloads commit history safely into memory.</text>
+    <text x="14" y="68" class="subtext" font-weight="600" fill="#0284c7">Does NOT touch or modify your active files!</text>
+  </g>
+
+  <!-- Arrow from Local Cache to Working Files (git merge) -->
+  <path d="M 210 256 L 310 292" class="arrow" stroke="#4f46e5" marker-end="url(#arrow-indigo)"/>
+  <rect x="200" y="268" width="84" height="22" rx="11" fill="#4f46e5"/>
+  <text x="210" y="283" class="pill">git merge</text>
+
+  <!-- Right Path: git pull (Direct Combined Arrow) -->
+  <path d="M 510 98 L 510 286" class="arrow" stroke="#059669" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#arrow-emerald)"/>
+  <rect x="525" y="165" width="195" height="42" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.2"/>
+  <rect x="535" y="174" width="70" height="22" rx="11" fill="#059669"/>
+  <text x="545" y="189" class="pill">git pull</text>
+  <text x="612" y="189" class="subtext" font-weight="600" fill="#065f46">fetch + merge</text>
+  <text x="535" y="202" class="subtext">Directly into working directory</text>
+
+  <!-- Bottom Box: Working Directory -->
+  <g transform="translate(240, 280)">
+    <rect width="360" height="66" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="16" y="26" class="title" font-size="14">Your Active Working Files &amp; Code</text>
+    <text x="16" y="44" class="subtext">Where you type code in VS Code or Cursor.</text>
+    <text x="16" y="58" class="subtext" font-weight="600" fill="#475569">Formula: git pull = git fetch + git merge</text>
+  </g>
+</svg>
